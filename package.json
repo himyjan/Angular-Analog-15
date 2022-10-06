@@ -2,11 +2,12 @@
   "name": "angular-app",
   "version": "0.0.0",
   "scripts": {
+    "dev": "vite",
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "test": "vitest"
   },
   "private": true,
   "dependencies": {
@@ -23,16 +24,18 @@
     "zone.js": "^0.11.8"
   },
   "devDependencies": {
+    "@analogjs/vite-plugin-angular": "latest",
     "@angular-devkit/build-angular": "^15.0.0-next.4",
     "@angular/cli": "^15.0.0-next.4",
     "@angular/compiler-cli": "^15.0.0-next.5",
-    "@types/jasmine": "^4.3.0",
-    "jasmine-core": "^4.4.0",
-    "karma": "^6.4.1",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-coverage": "^2.2.0",
-    "karma-jasmine": "^5.1.0",
-    "karma-jasmine-html-reporter": "^2.0.0",
-    "typescript": "^4.8.4"
+    "jsdom": "^20.0.1",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.4",
+    "vitest": "^0.23.4"
+  },
+  "overrides": {
+    "@analogjs/vite-plugin-angular": {
+      "@angular-devkit/build-angular": "$@angular-devkit/build-angular"
+    }
   }
 }
